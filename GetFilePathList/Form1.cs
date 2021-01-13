@@ -23,6 +23,7 @@ namespace GetFilePathList
         List<string> _throughElements = new List<string>() { "YukkuriMovieMakerProject", "TimelineItems", "CommonItem" };
         List<string> _targetElements = new List<string>() { "FilePath" };
         string user = Environment.UserName;
+        string appDataPath = "";
 
         public Form1()
         {
@@ -39,6 +40,18 @@ namespace GetFilePathList
             }
             button2.Enabled = false;
             button3.Enabled = false;
+
+            appDataPath = "C:\\Users\\" + user + "\\AppData\\Local\\GetFilePathList";
+            if (!Directory.Exists(appDataPath)) 
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
+            appDataPath = "C:\\Users\\" + user + "\\AppData\\Local\\GetFilePathList"+"\\target.xml";
+            if (!File.Exists(appDataPath)) 
+            {
+                System.IO.File.Copy(@"target.xml", appDataPath);
+            }
+
         }
 
         private void Ramda() 
@@ -336,7 +349,7 @@ namespace GetFilePathList
                     count++;
                 }
             }
-            File.Copy(FilePath, "target.xml", true);
+            File.Copy(FilePath, appDataPath, true);
 
             XDocument doc = XDocument.Load("target.xml");
             doc.Element("YukkuriMovieMakerProject").Attributes().Where(e=>e.IsNamespaceDeclaration).Remove();
@@ -465,6 +478,12 @@ namespace GetFilePathList
                 }
             }
 
+            int count = 1;
+            foreach(DataRow dr in answerDT.Rows) 
+            {
+                dr["Number"] = count.ToString();
+                count++;
+            }
 
             return answerDT;
         }
