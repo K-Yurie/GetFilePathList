@@ -23,6 +23,8 @@ namespace GetFilePathList
         List<string> _throughElements = new List<string>() { "YukkuriMovieMakerProject", "TimelineItems", "CommonItem" };
         List<string> _targetElements = new List<string>() { "FilePath" };
         string user = Environment.UserName;
+        string appDataPath = "";
+        string exoPath = "";
 
         public Form1()
         {
@@ -39,6 +41,20 @@ namespace GetFilePathList
             }
             button2.Enabled = false;
             button3.Enabled = false;
+
+            appDataPath = "C:\\Users\\" + user + "\\AppData\\Local\\GetFilePathList";
+            if (!Directory.Exists(appDataPath)) 
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
+            appDataPath = "C:\\Users\\" + user + "\\AppData\\Local\\GetFilePathList"+"\\target.xml";
+            if (!File.Exists(appDataPath)) 
+            {
+                System.IO.File.Copy(@"target.xml", appDataPath);
+            }
+
+            //exoPath = "C:\\Users\\" + user + "\\AppData\\Local\\GetFilePathList\\target.txt";
+            //StreamWriter sw = File.CreateText(exoPath);
         }
 
         private void Ramda() 
@@ -47,7 +63,7 @@ namespace GetFilePathList
             button1.Click += (_sender, _e) => 
             {
                 OpenFileDialog fileDialog = new OpenFileDialog();
-                fileDialog.Filter = "YMMPファイル(*.ymmp)|*.ymmp";
+                fileDialog.Filter = "YMMPファイル(*.ymmp)|*.ymmp|EXOファイル(*.exo)|*.exo";
 
                 using (StreamReader sr = new StreamReader("default.txt", Encoding.GetEncoding("Shift_JIS")))
                 {
@@ -61,7 +77,7 @@ namespace GetFilePathList
                         fileDialog.InitialDirectory = defaultPath;
 
                     }
-                    fileDialog.Title = "YMMPファイルを指定してください";
+                    fileDialog.Title = "ファイルを指定してください";
 
                     if (fileDialog.ShowDialog() == DialogResult.OK)
                     {
@@ -82,17 +98,33 @@ namespace GetFilePathList
                 // xmlTable;
                 if (textBox1.Text == "")
                 {
-                    MessageBox.Show("YMMPファイルを指定してください");
+                    MessageBox.Show("ファイルを指定してください");
                 }
                 else
                 {
                     if (checkBox2.Checked) 
                     {
-                        dataGridView1.DataSource = sortByKakutyosi(getYMMPInner(textBox1.Text));
+                        if (textBox1.Text.Substring(textBox1.Text.IndexOf('.')) == ".exo")
+                        {
+                            dataGridView1.DataSource = sortByKakutyosi(getExoInnner(textBox1.Text));
+
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = sortByKakutyosi(getYMMPInner(textBox1.Text));
+                        }
                     }
                     else 
                     {
-                        dataGridView1.DataSource = getYMMPInner(textBox1.Text);
+                        if (textBox1.Text.Substring(textBox1.Text.IndexOf('.')) == ".exo")
+                        {
+                            dataGridView1.DataSource = getExoInnner(textBox1.Text);
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = getYMMPInner(textBox1.Text);
+
+                        }
                     }
 
                 }
@@ -102,17 +134,31 @@ namespace GetFilePathList
             {
                 if (textBox1.Text == "")
                 {
-                    MessageBox.Show("YMMPファイルを指定してください");
+                    MessageBox.Show("ファイルを指定してください");
                 }
                 else
                 {
                     if (checkBox2.Checked)
                     {
-                        dataGridView1.DataSource = sortByKakutyosi(getYMMPInner(textBox1.Text,true));
+                        if (textBox1.Text.Substring(textBox1.Text.IndexOf('.')) == ".exo")
+                        {
+                            dataGridView1.DataSource = sortByKakutyosi(getExoInnner(textBox1.Text, true));
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = sortByKakutyosi(getYMMPInner(textBox1.Text, true));
+                        }
                     }
                     else
                     {
-                        dataGridView1.DataSource = getYMMPInner(textBox1.Text, true);
+                        if (textBox1.Text.Substring(textBox1.Text.IndexOf('.')) == ".exo")
+                        {
+                            dataGridView1.DataSource = getExoInnner(textBox1.Text, true);
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = getYMMPInner(textBox1.Text, true);
+                        }
                     }
                 }
             };
@@ -336,7 +382,7 @@ namespace GetFilePathList
                     count++;
                 }
             }
-            File.Copy(FilePath, "target.xml", true);
+            File.Copy(FilePath, appDataPath, true);
 
             XDocument doc = XDocument.Load("target.xml");
             doc.Element("YukkuriMovieMakerProject").Attributes().Where(e=>e.IsNamespaceDeclaration).Remove();
@@ -465,8 +511,101 @@ namespace GetFilePathList
                 }
             }
 
+            int count = 1;
+            foreach(DataRow dr in answerDT.Rows) 
+            {
+                dr["Number"] = count.ToString();
+                count++;
+            }
 
             return answerDT;
+        }
+
+
+        private DataTable getExoInnner(string FilePath, bool isAdd = false) 
+        {
+
+            DataTable answerDt = new DataTable();
+            answerDt.Columns.Add("Number");
+            answerDt.Columns.Add("FileName");
+            answerDt.Columns.Add("FullPath");
+            int count = 0;
+            if (isAdd)
+            {
+                for (int row = 0; row < dataGridView1.Rows.Count - 1; row++)
+                {
+                    DataRow dr = answerDt.NewRow();
+                    for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                    {
+                        dr[col] = dataGridView1.Rows[row].Cells[col].Value;
+                    }
+                    answerDt.Rows.Add(dr);
+                    count++;
+                }
+            }
+
+            var fileTexts = new List<string>();
+            string line = "";
+            using (System.IO.StreamReader sr = new System.IO.StreamReader(FilePath,Encoding.GetEncoding("SHIFT-JIS"))) 
+            {
+                while ((line = sr.ReadLine()) != null)
+                {
+                    fileTexts.Add(line);
+                }
+            }
+
+            var sozaiPathes = fileTexts.Where(x => x.Length>5).Where(x=>x.Substring(0,5)=="file=").ToList();
+            int lastMoney = FilePath.LastIndexOf('\\');
+            lastMoney = lastMoney + 1;
+            string exoName = FilePath.Substring(lastMoney,FilePath.Length-lastMoney);
+            string filePath = FilePath.Substring(0, lastMoney);
+            exoName.Replace("\\", "");
+            exoName = exoName.Replace(".exo", "");
+            exoName = exoName.Replace(".EXO", "");
+            sozaiPathes = sozaiPathes.Where(x => !x.Contains(filePath+exoName)).ToList();
+            sozaiPathes = sozaiPathes.Select(x => x.Replace("file=", "")).ToList();
+            
+
+            int gotItemsCount = 1;
+            if (checkBox1.Checked)
+            {
+                foreach (string target in sozaiPathes)
+                {
+                    if (!string.IsNullOrEmpty(target))
+                    {
+                        if (!answerDt.AsEnumerable().Any(row => target == row.Field<string>("FullPath").ToString()))
+                        {
+                            var newRow = answerDt.NewRow();
+                            newRow["Number"] = gotItemsCount;
+                            int lastMoney1 = target.LastIndexOf('\\');
+                            lastMoney1 = lastMoney1 + 1;
+                            newRow["FileName"] = target.Substring(lastMoney1, target.Length - lastMoney1);
+                            newRow["FullPath"] = target;
+                            answerDt.Rows.Add(newRow);
+                            gotItemsCount++;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (string target in sozaiPathes)
+                {
+                    if (!string.IsNullOrEmpty(target))
+                    {
+
+                            var newRow = answerDt.NewRow();
+                            newRow["Number"] = gotItemsCount;
+                            int lastMoney1 = target.LastIndexOf('\\');
+                            lastMoney1 = lastMoney1 + 1;
+                            newRow["FileName"] = target.Substring(lastMoney1, target.Length - lastMoney1);
+                            newRow["FullPath"] = target;
+                            answerDt.Rows.Add(newRow);
+                    }
+                    gotItemsCount++;
+                }
+            }
+            return answerDt;
         }
 
         private void OpenFile(int columnIndex, int rowindex) 

@@ -46,9 +46,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -125,9 +125,9 @@
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(24, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 15);
+            this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "YMMPファイルを選択";
+            this.label2.Text = "ファイルを選択";
             // 
             // button2
             // 
@@ -225,6 +225,23 @@
             this.panel1.Size = new System.Drawing.Size(730, 40);
             this.panel1.TabIndex = 13;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(33, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 12);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "ファイル名：";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(100, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(612, 19);
+            this.textBox2.TabIndex = 0;
+            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
@@ -235,23 +252,6 @@
             this.checkBox3.TabIndex = 14;
             this.checkBox3.Text = "出力ファイルの名前を指定する（拡張子なしで記述）";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(100, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(612, 19);
-            this.textBox2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(33, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 12);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "ファイル名：";
             // 
             // Form1
             // 
