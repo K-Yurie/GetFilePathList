@@ -36,4 +36,3 @@ C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Release\
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Release\GetFilePathList.csproj.CopyComplete
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Release\GetFilePathList.exe
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Release\GetFilePathList.pdb
-C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Release\GetFilePathList.csprojAssemblyReference.cache
