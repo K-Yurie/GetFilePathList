@@ -24,7 +24,7 @@ namespace GetFilePathList
         List<string> _targetElements = new List<string>() { "FilePath" };
         string user = Environment.UserName;
         string appDataPath = "";
-        string exoPath = "";
+
 
         public Form1()
         {
@@ -225,24 +225,6 @@ namespace GetFilePathList
 
                 }
 
-                //string ymmpFileName = label1.Text.Substring(7,label1.Text.Length-7);
-
-                //OpenFileDialog fileDialog = new OpenFileDialog();
-                //fileDialog.Filter = "CSVファイル(*.csv)|*.csv";
-                //using (StreamReader sr = new StreamReader(ymmpFileName+".csv", Encoding.GetEncoding("Shift_JIS")))
-                //{
-                //    string defaultPath = sr.ReadLine();
-
-                //    fileDialog.InitialDirectory = @"C:\";
-                //    fileDialog.Title = "CSVファイルの情報を設定してください";
-
-                //    if (fileDialog.ShowDialog() == DialogResult.OK)
-                //    {
-                //        CSV.CreateCSVFile()
-                //        MyLib.CSV.CSVWrite(dt, fileDialog.FileName);
-                //    }
-                //}
-
 
             };
 
@@ -352,11 +334,14 @@ namespace GetFilePathList
                              UIOption.OnlyErrorDialogs,
                              RecycleOption.SendToRecycleBin);
                              book.SaveAs(excelFileName + "\\" + filename);
+                             MessageBox.Show("出力完了");
                          }
                      }
                      else 
                      {
                          book.SaveAs(excelFileName + "\\" + filename);
+                    MessageBox.Show("出力完了");
+
                      }
                  }
              };
@@ -384,10 +369,10 @@ namespace GetFilePathList
             }
             File.Copy(FilePath, appDataPath, true);
 
-            XDocument doc = XDocument.Load("target.xml");
+            XDocument doc = XDocument.Load(appDataPath);
             doc.Element("YukkuriMovieMakerProject").Attributes().Where(e=>e.IsNamespaceDeclaration).Remove();
-            doc.Save("target.xml");
-            doc = XDocument.Load("target.xml");
+            doc.Save(appDataPath);
+            doc = XDocument.Load(appDataPath);
             XElement YMMP = doc.Element("YukkuriMovieMakerProject");
             XElement TimeLine = YMMP.Element("TimelineItems");
             IEnumerable<XElement> Commons = TimeLine.Elements("CommonItem");
