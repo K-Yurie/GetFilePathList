@@ -29,58 +29,58 @@
         private void InitializeComponent()
         {
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tbSelectedPath = new System.Windows.Forms.TextBox();
+            this.btnSortFile = new System.Windows.Forms.Button();
+            this.lblSelectedFolderName = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOutputCSVFile = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.既定のフォルダを指定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSelectNewFile = new System.Windows.Forms.Button();
+            this.btnSelectAddFile = new System.Windows.Forms.Button();
+            this.chkFirstEncountOnly = new System.Windows.Forms.CheckBox();
+            this.chkIsSortByExtension = new System.Windows.Forms.CheckBox();
+            this.btnOutputExcelFile = new System.Windows.Forms.Button();
+            this.pnlNamedByUser = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.tbOutputFileName = new System.Windows.Forms.TextBox();
+            this.chkIsNamedByUser = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlNamedByUser.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbSelectedPath
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(78, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(677, 23);
-            this.textBox1.TabIndex = 0;
+            this.tbSelectedPath.Enabled = false;
+            this.tbSelectedPath.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbSelectedPath.Location = new System.Drawing.Point(78, 49);
+            this.tbSelectedPath.Name = "tbSelectedPath";
+            this.tbSelectedPath.Size = new System.Drawing.Size(677, 23);
+            this.tbSelectedPath.TabIndex = 0;
             // 
-            // button1
+            // btnSortFile
             // 
-            this.button1.Location = new System.Drawing.Point(27, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "…";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSortFile.Location = new System.Drawing.Point(27, 51);
+            this.btnSortFile.Name = "btnSortFile";
+            this.btnSortFile.Size = new System.Drawing.Size(45, 23);
+            this.btnSortFile.TabIndex = 1;
+            this.btnSortFile.Text = "…";
+            this.btnSortFile.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblSelectedFolderName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(23, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "ファイル名：";
+            this.lblSelectedFolderName.AutoSize = true;
+            this.lblSelectedFolderName.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSelectedFolderName.Location = new System.Drawing.Point(23, 77);
+            this.lblSelectedFolderName.Name = "lblSelectedFolderName";
+            this.lblSelectedFolderName.Size = new System.Drawing.Size(106, 21);
+            this.lblSelectedFolderName.TabIndex = 2;
+            this.lblSelectedFolderName.Text = "ファイル名：";
             // 
             // dataGridView1
             // 
@@ -129,16 +129,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "ファイルを選択";
             // 
-            // button2
+            // btnOutputCSVFile
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(413, 528);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(360, 24);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "ＣＳＶ出力(カンマ区切り)";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOutputCSVFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOutputCSVFile.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnOutputCSVFile.Location = new System.Drawing.Point(413, 528);
+            this.btnOutputCSVFile.Name = "btnOutputCSVFile";
+            this.btnOutputCSVFile.Size = new System.Drawing.Size(360, 24);
+            this.btnOutputCSVFile.TabIndex = 5;
+            this.btnOutputCSVFile.Text = "ＣＳＶ出力(カンマ区切り)";
+            this.btnOutputCSVFile.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -158,72 +158,72 @@
             this.既定のフォルダを指定ToolStripMenuItem.Text = "既定のフォルダを指定";
             this.既定のフォルダを指定ToolStripMenuItem.Click += new System.EventHandler(this.既定のフォルダを指定ToolStripMenuItem_Click);
             // 
-            // button4
+            // btnSelectNewFile
             // 
-            this.button4.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button4.Location = new System.Drawing.Point(527, 101);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 30);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "新規抽出";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSelectNewFile.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSelectNewFile.Location = new System.Drawing.Point(527, 101);
+            this.btnSelectNewFile.Name = "btnSelectNewFile";
+            this.btnSelectNewFile.Size = new System.Drawing.Size(120, 30);
+            this.btnSelectNewFile.TabIndex = 8;
+            this.btnSelectNewFile.Text = "新規抽出";
+            this.btnSelectNewFile.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnSelectAddFile
             // 
-            this.button5.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button5.Location = new System.Drawing.Point(653, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 30);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "追加で抽出";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSelectAddFile.Font = new System.Drawing.Font("MS UI Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSelectAddFile.Location = new System.Drawing.Point(653, 101);
+            this.btnSelectAddFile.Name = "btnSelectAddFile";
+            this.btnSelectAddFile.Size = new System.Drawing.Size(120, 30);
+            this.btnSelectAddFile.TabIndex = 9;
+            this.btnSelectAddFile.Text = "追加で抽出";
+            this.btnSelectAddFile.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkFirstEncountOnly
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox1.Location = new System.Drawing.Point(27, 111);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(253, 20);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "重複した素材データは表示しない";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkFirstEncountOnly.AutoSize = true;
+            this.chkFirstEncountOnly.Checked = true;
+            this.chkFirstEncountOnly.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFirstEncountOnly.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkFirstEncountOnly.Location = new System.Drawing.Point(27, 111);
+            this.chkFirstEncountOnly.Name = "chkFirstEncountOnly";
+            this.chkFirstEncountOnly.Size = new System.Drawing.Size(253, 20);
+            this.chkFirstEncountOnly.TabIndex = 10;
+            this.chkFirstEncountOnly.Text = "重複した素材データは表示しない";
+            this.chkFirstEncountOnly.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkIsSortByExtension
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox2.Location = new System.Drawing.Point(286, 111);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(206, 20);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "ファイルの種類ごとに並べる";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkIsSortByExtension.AutoSize = true;
+            this.chkIsSortByExtension.Checked = true;
+            this.chkIsSortByExtension.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkIsSortByExtension.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkIsSortByExtension.Location = new System.Drawing.Point(286, 111);
+            this.chkIsSortByExtension.Name = "chkIsSortByExtension";
+            this.chkIsSortByExtension.Size = new System.Drawing.Size(206, 20);
+            this.chkIsSortByExtension.TabIndex = 11;
+            this.chkIsSortByExtension.Text = "ファイルの種類ごとに並べる";
+            this.chkIsSortByExtension.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnOutputExcelFile
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button3.Location = new System.Drawing.Point(43, 528);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(362, 24);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Excelファイル出力";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnOutputExcelFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOutputExcelFile.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnOutputExcelFile.Location = new System.Drawing.Point(43, 528);
+            this.btnOutputExcelFile.Name = "btnOutputExcelFile";
+            this.btnOutputExcelFile.Size = new System.Drawing.Size(362, 24);
+            this.btnOutputExcelFile.TabIndex = 12;
+            this.btnOutputExcelFile.Text = "Excelファイル出力";
+            this.btnOutputExcelFile.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnlNamedByUser
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(43, 577);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 40);
-            this.panel1.TabIndex = 13;
+            this.pnlNamedByUser.Controls.Add(this.label3);
+            this.pnlNamedByUser.Controls.Add(this.tbOutputFileName);
+            this.pnlNamedByUser.Enabled = false;
+            this.pnlNamedByUser.Location = new System.Drawing.Point(43, 577);
+            this.pnlNamedByUser.Name = "pnlNamedByUser";
+            this.pnlNamedByUser.Size = new System.Drawing.Size(730, 40);
+            this.pnlNamedByUser.TabIndex = 13;
             // 
             // label3
             // 
@@ -235,42 +235,42 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "ファイル名：";
             // 
-            // textBox2
+            // tbOutputFileName
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(612, 19);
-            this.textBox2.TabIndex = 0;
+            this.tbOutputFileName.Location = new System.Drawing.Point(100, 12);
+            this.tbOutputFileName.Name = "tbOutputFileName";
+            this.tbOutputFileName.Size = new System.Drawing.Size(612, 19);
+            this.tbOutputFileName.TabIndex = 0;
             // 
-            // checkBox3
+            // chkIsNamedByUser
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.checkBox3.Location = new System.Drawing.Point(46, 567);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(293, 16);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "出力ファイルの名前を指定する（拡張子なしで記述）";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkIsNamedByUser.AutoSize = true;
+            this.chkIsNamedByUser.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.chkIsNamedByUser.Location = new System.Drawing.Point(46, 567);
+            this.chkIsNamedByUser.Name = "chkIsNamedByUser";
+            this.chkIsNamedByUser.Size = new System.Drawing.Size(293, 16);
+            this.chkIsNamedByUser.TabIndex = 14;
+            this.chkIsNamedByUser.Text = "出力ファイルの名前を指定する（拡張子なしで記述）";
+            this.chkIsNamedByUser.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 629);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.chkIsNamedByUser);
+            this.Controls.Add(this.pnlNamedByUser);
+            this.Controls.Add(this.btnOutputExcelFile);
+            this.Controls.Add(this.chkIsSortByExtension);
+            this.Controls.Add(this.chkFirstEncountOnly);
+            this.Controls.Add(this.btnSelectAddFile);
+            this.Controls.Add(this.btnSelectNewFile);
+            this.Controls.Add(this.btnOutputCSVFile);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblSelectedFolderName);
+            this.Controls.Add(this.btnSortFile);
+            this.Controls.Add(this.tbSelectedPath);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -279,8 +279,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlNamedByUser.ResumeLayout(false);
+            this.pnlNamedByUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,26 +289,26 @@
         #endregion
 
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbSelectedPath;
+        private System.Windows.Forms.Button btnSortFile;
+        private System.Windows.Forms.Label lblSelectedFolderName;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOutputCSVFile;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 既定のフォルダを指定ToolStripMenuItem;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSelectNewFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSelectAddFile;
+        private System.Windows.Forms.CheckBox chkFirstEncountOnly;
+        private System.Windows.Forms.CheckBox chkIsSortByExtension;
+        private System.Windows.Forms.Button btnOutputExcelFile;
+        private System.Windows.Forms.Panel pnlNamedByUser;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.TextBox tbOutputFileName;
+        private System.Windows.Forms.CheckBox chkIsNamedByUser;
     }
 }
 

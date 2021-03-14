@@ -30,7 +30,6 @@ C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\bin\Debug\Cl
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\bin\Debug\ExcelNumberFormat.xml
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\bin\Debug\MyLib.pdb
-C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Debug\GetFilePathList.csprojAssemblyReference.cache
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Debug\GetFilePathList.Form1.resources
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Debug\GetFilePathList.Properties.Resources.resources
 C:\Users\Yurie\Documents\MyProjects\GetFilePathList\GetFilePathList\obj\Debug\GetFilePathList.csproj.GenerateResource.cache
